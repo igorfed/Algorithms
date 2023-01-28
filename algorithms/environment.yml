@@ -1,0 +1,8 @@
+name: algorithms
+channels:
+  - pytorch
+dependencies:
+  - python==3.9
+  - pip
+  - numpy=1.20
+  
