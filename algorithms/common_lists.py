@@ -152,3 +152,6 @@ def find_second_unique1(lst: List[int]):
 #print(find_minimum([9,2,3, 6]))
 #print(find_fisrt_unique([4,5,1,2,0,4]))
 print(find_second_unique1([5,5,1,2,0,4]))
+
+https://www.educative.io/module/page/8q5JgjuQREjpzD9gq/10370001/4688805018992640/5000095339905024
+https://www.educative.io/courses/algorithms-coding-interviews-python/my1vEn9NR3R
