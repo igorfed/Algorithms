@@ -6,7 +6,6 @@ def moving_average(arr: List[int], window_size: int) -> List[float]:
         sum = 0
         for j in range(i,i+window_size):
             sum = sum + arr[j]
-        
         y.append(sum/window_size)
     return y
 
