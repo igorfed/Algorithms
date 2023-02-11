@@ -31,6 +31,9 @@ list.pop()
 list.pop(1)
 ```
 - **reverse** reverse O(n)
+```
+- lst_revers = lst[::-1]
+```
 - Slicing
 ```
 list[end:start]

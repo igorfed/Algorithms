@@ -133,13 +133,65 @@ def find_second_unique1(lst: List[int]):
     for item in lst:
         if (item != max0) and (item > max1):
             max1 = item
-        
-
-
     return max1
 
+def right_rotate(lst, k):
+    '''
+    есть    list [10, 20, 30, 40 50]
+            k = 3 
+    развернуть лист начиная с позиции k
+    '''
+    n = len(lst)
+    out = lst[n-k:]+lst[:n-k]
+    return out
 
 
+def rearrange(lst):
+    '''
+    Rearrange Positive & Negative Values
+    Rearrange its elements in such a way that the negative elements appear at one end and positive elements appear at the other
+
+    args: lst = [10,-1,20,4,5,-9,-6]
+    return [-1,-9,-6, 10, 20, 4, 5]
+    '''
+    # var 1 with two auxiliary lists, neg and pos
+    #lst0, lst1 = [], []
+    #for i in lst:
+    #    if i<0:
+    #        lst0.append(i)
+    #    else: 
+    #        lst1.append(i)
+    #return lst0+lst1
+    I , J = [], []
+    I = [i for i in lst if i < 0 ]
+    J = [i for i in lst if i >= 0 ]
+    #return lst0+lst1
+    return I + J
+
+
+def max_min(lst):
+    '''
+    Rearrange Sorted List in Max/Min Form
+    the 0th index will have the largest number, the 1st index will have the smallest, and the 2nd index will have second-largest, and so on.
+    '''
+    result = []
+    print(len(lst)//2)
+    for i in range(len(lst)//2):
+        result.append(lst[-(i+1)])
+        result.append(lst[i])
+    if len(lst) % 2:
+        result.append(lst[len(lst)//2])
+    return result
+
+
+
+
+
+
+#print(right_rotate(lst=[13, 'a','Python'], k=3))
+
+#print(rearrange(lst=[10,-1,20,4,5,-9,-6]))
+print(max_min ([1,2,3,4,5]))
 
 #list1 = []  
 #list2 = [2,6,7,8]
@@ -151,7 +203,7 @@ def find_second_unique1(lst: List[int]):
 
 #print(find_minimum([9,2,3, 6]))
 #print(find_fisrt_unique([4,5,1,2,0,4]))
-print(find_second_unique1([5,5,1,2,0,4]))
+#print(find_second_unique1([5,5,1,2,0,4]))
 
-https://www.educative.io/module/page/8q5JgjuQREjpzD9gq/10370001/4688805018992640/5000095339905024
-https://www.educative.io/courses/algorithms-coding-interviews-python/my1vEn9NR3R
+#https://www.educative.io/module/page/8q5JgjuQREjpzD9gq/10370001/4688805018992640/5000095339905024
+#https://www.educative.io/courses/algorithms-coding-interviews-python/my1vEn9NR3R
