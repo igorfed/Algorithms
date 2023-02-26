@@ -123,34 +123,6 @@ def find_first_unique(lst: List[int]):
 
 print(find_first_unique(lst = [4, 2, 1, 5, 0]))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def find_second_unique1(lst: List[int]):
     '''
     find Second Maximum Value in a list
@@ -164,33 +136,18 @@ def find_second_unique1(lst: List[int]):
                     lst[j], lst[j+1] = lst[j+1], lst[j]
         return lst
     return sort_bubble(lst)[1]
-    
-def find_second_unique1(lst: List[int]):
-    '''
-    find Second Maximum Value in a list without sorting
-    in: [9,2,3,6] or [4, 2, 1, 5, 0]
-    out : 6 or 4
-    '''
-    max0 = float('-inf') # setup minimum
-    max1 = float('-inf') # setup minimum
-    for item in lst:
-        if item > max0:
-            max0 = item
 
-    for item in lst:
-        if (item != max0) and (item > max1):
-            max1 = item
-    return max1
 
 def right_rotate(lst, k):
     '''
-    есть    list [10, 20, 30, 40 50]
-            k = 3 
-    развернуть лист начиная с позиции k
+    Right Rotate List sinc position k
+    in: lst = [10,20,30,40,50], k = 3
+    out :[30, 40, 50, 10, 20]
     '''
-    n = len(lst)
-    out = lst[n-k:]+lst[:n-k]
-    return out
+    print('[INFO] Right rotate list')
+    return lst[len(lst)-k:] + lst[:len(lst)-k]
+
+print(right_rotate(lst = [300, -1, 3, 0], k = 3))
 
 
 def rearrange(lst):
@@ -214,7 +171,7 @@ def rearrange(lst):
     J = [i for i in lst if i >= 0 ]
     #return lst0+lst1
     return I + J
-
+print(rearrange(lst = [10,-1,20,4,5,-9,-6]))
 
 def max_min(lst):
     '''
@@ -230,13 +187,15 @@ def max_min(lst):
         result.append(lst[len(lst)//2])
     return result
 
+print(rearrange(lst = [1,2,3,4,5]))
+
 # Not Fully understand
 def find_max_sum_sublist(lst):
-
     '''
     Задача o максимальной сумме подмассива (алгоритм Кадане)
     Есть несортированный Лист
     '''
+    print('[INFO] Maximum Sum Sublist')
     current_max = 0
     global_max = 0
     for i in lst:
@@ -245,6 +204,26 @@ def find_max_sum_sublist(lst):
         global_max = max(global_max, 0)
         current_max = max(current_max, global_max)
     return current_max
+
+print(find_max_sum_sublist(lst = [-2,10,7,-5,15,6]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def f(i, values=[]):
     values.append(i)
